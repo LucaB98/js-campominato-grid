@@ -15,7 +15,7 @@
 
 #main{
     background-color: chartreuse;
-    height: calc(100vh - 70px);
+    height: 100%;
 }
 
 .container{
@@ -29,11 +29,12 @@
     width: 500px;
     display: flex;
     align-items: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .cell{
-    width: calc(100% / 10);
-    height: calc(100% / 10);
+    width: 10%;
+    height: 10%;
     border: 1px solid black;
 }
