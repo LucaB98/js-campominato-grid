@@ -6,22 +6,34 @@ const grid = document.getElementById('grid');
 
 // funzioni
 
-const createCell = (number) => {
-    const cell = document.createElement('div');
-    cell.classList = 'cell'
-    return;
+const createCell = (content) => {
+    const newCell = document.createElement('div');
+    newCell.classList = 'cell'
+    newCell.innerText = content;
+    return newCell;
 };
 
 
 
-const rows = 10
-const cols = 10
-const totCell = rows * cols
+const rows = 10;
+const cols = 10;
+const totCell = rows * cols;
+
 
 formElement.addEventListener('submit', (e) => {
     e.preventDefault();
-    for(let i = 0; i < totCell; i++){
+
+    grid.innerHTML = '';
+
+
+    for(let i = 1; i <= totCell; i++){
+
         const cell = createCell(i);
+
+        cell.addEventListener('click', () => {
+            cell.classList.toggle('clicked');
+        });
+
         grid.appendChild(cell);
-    }
+    };
 });
