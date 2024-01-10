@@ -1,3 +1,8 @@
+body{
+    background-color: chartreuse;
+}
+
+
 .logo{
     height: 30px;
     height: 100%;
@@ -13,20 +18,21 @@
     border: 1px solid;
 }
 
-#main{
-    background-color: chartreuse;
-    height: 100%;
+#main{   
+    margin: 0 auto;
 }
 
 .container{
-    display: flex;
-    justify-content: center;
-    height: 100%;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    flex-grow: 1;
 }
 
-.grid{
+#grid{
     height: 500px;
     width: 500px;
+    margin: 0 auto;
     display: flex;
     align-items: flex-start;
     justify-content: center;
