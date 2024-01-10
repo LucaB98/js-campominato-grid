@@ -31,7 +31,12 @@ formElement.addEventListener('submit', (e) => {
         const cell = createCell(i);
 
         cell.addEventListener('click', () => {
+
+            const cellValue = cell.innerText;
+            console.log('Valore della casella cliccata:', cellValue);
+            
             cell.classList.toggle('clicked');
+            
         });
 
         grid.appendChild(cell);
