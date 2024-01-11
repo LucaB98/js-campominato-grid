@@ -3,6 +3,10 @@ body{
 }
 
 
+:root{
+    --cols-per-row: 10;
+}
+
 .logo{
     height: 30px;
     height: 100%;
@@ -40,8 +44,8 @@ body{
 }
 
 .cell{
-    width: 10%;
-    height: 10%;
+    height: calc(100% / var(--cols-per-row));
+    width: calc(100% / var(--cols-per-row));
     border: 1px solid black;
     display: flex;
     justify-content: center;
@@ -51,3 +55,5 @@ body{
 .clicked{
     background-color: lightskyblue;
 }
+
+
