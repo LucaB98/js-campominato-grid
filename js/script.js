@@ -36,7 +36,7 @@ const revealAllCell = (bombs) => {
     const cells = document.querySelectorAll('.cell')
     for(let cell of cells){
         cell.classList.add('clicked');
-        if(bombs.includes(parseInt(cell.innerText)));{
+        if(bombs.includes(parseInt(cell.innerText))){
             cell.classList.add('bomb')
         }
     }
@@ -112,3 +112,5 @@ formElement.addEventListener('submit', (e) => {
         grid.appendChild(cell);
     };
 });
+
+
