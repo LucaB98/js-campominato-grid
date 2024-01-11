@@ -25,12 +25,31 @@ const generateBombs = (maxBombNumber, totalBombs) => {
     return bombs;
 }
 
+const endGame = (score, bombs, revealFunction, hasWon = false) =>{
+    const message = hasWon ? `Hai vinto!`: `Hai perso! hai totalizzato ${score} punti`;
+    alert(message);
+    
+    revealFunction(bombs);
+}
+
+const revealAllCell = (bombs) => {
+    const cells = document.querySelectorAll('.cell')
+    for(let cell of cells){
+        cell.classList.add('clicked');
+        if(bombs.includes(parseInt(cell.innerText)));{
+            cell.classList.add('bomb')
+        }
+    }
+}
+
 
 
 
 
 formElement.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    
 
     grid.innerHTML = '';
 
@@ -75,8 +94,19 @@ formElement.addEventListener('submit', (e) => {
             
 
             cell.classList.add('clicked');
-    
-            scoreDisplay.innerText = ++score;
+            const hasHitBomb = bombs.includes(i);
+            if(hasHitBomb){
+                endGame(score, bombs, revealAllCell, false)
+
+            }else{
+                scoreDisplay.innerText = ++score;
+
+                if(score === maxPoint){
+                   endGame(score, bombs, revealAllCell, true);
+
+                };
+            };
+            
         });
 
         grid.appendChild(cell);
